@@ -10,6 +10,17 @@
         "dev": "ts-node-dev --respawn --files .",
         "lint": "eslint . --ext .js,.ts"
     },
+    "dependencies": {
+        "@discordjs/rest": "^0.1.0-canary.0",
+        "discord-api-types": "^0.25.2",
+        "discord.js": "^13.3.1"
+    },
+    "optionalDependencies": {
+        "bufferutil": "^4.0.5",
+        "erlpack": "^0.1.3",
+        "utf-8-validate": "^5.0.7",
+        "zlib-sync": "^0.1.7"
+    },
     "devDependencies": {
         "@types/node": "^16.11.12",
         "@typescript-eslint/eslint-plugin": "^5.6.0",

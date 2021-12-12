@@ -1,17 +1,25 @@
 {
-  "name": "bot",
-  "version": "0.0.0",
-  "author": "JamesBeeProg <jamesbeeprog@gmail.com> (https://github.com/JamesBeeProg)",
-"license": "MIT",
-"private": true,
-  "packageManager": "yarn@3.1.1",
-  "scripts": {
-        "dev": "ts-node-dev --respawn --files ."
+    "name": "bot",
+    "version": "0.0.0",
+    "main": "src/index.ts",
+    "author": "JamesBeeProg <jamesbeeprog@gmail.com> (https://github.com/JamesBeeProg)",
+    "license": "MIT",
+    "private": true,
+    "packageManager": "yarn@3.1.1",
+    "scripts": {
+        "dev": "ts-node-dev --respawn --files .",
+        "lint": "eslint . --ext .js,.ts"
     },
-  "devDependencies": {
-    "@types/node": "^16.11.12",
-    "ts-node": "^10.4.0",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.5.3"
-  }
+    "devDependencies": {
+        "@types/node": "^16.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.6.0",
+        "@typescript-eslint/parser": "^5.6.0",
+        "eslint": "^8.4.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.5.1",
+        "ts-node": "^10.4.0",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.5.3"
+    }
 }

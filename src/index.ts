@@ -1,1 +1,1 @@
-console.log('wew')
+console.log('wew');

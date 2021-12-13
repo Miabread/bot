@@ -6,7 +6,7 @@ export interface Command {
     execute(interaction: CommandInteraction): Promise<unknown>;
 }
 
-import { ping } from './ping';
+import { ping } from './commands/ping';
 
 const commandArray = [ping];
 

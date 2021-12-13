@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Command } from '.';
+import { Command } from '../command';
 
 export const ping: Command = {
     options: new SlashCommandBuilder().setName('ping').setDescription('pong'),

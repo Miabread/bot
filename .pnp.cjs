@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@discordjs/builders", "npm:0.9.0"],
             ["@discordjs/rest", "npm:0.1.0-canary.0"],
             ["@types/node", "npm:16.11.12"],
             ["@typescript-eslint/eslint-plugin", "virtual:a66fcf2aee26ca1e5acae74e1e4996a2e9e0f7051ef1be5ec5c8fe984acf557c713e8706ce3ff59000b39693987d4d2d216be1b154ada08d9097c053e51e2164#npm:5.6.0"],
@@ -42,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bufferutil", "npm:4.0.5"],
             ["discord-api-types", "npm:0.25.2"],
             ["discord.js", "npm:13.3.1"],
+            ["dotenv", "npm:10.0.0"],
             ["erlpack", "npm:0.1.3"],
             ["eslint", "npm:8.4.1"],
             ["eslint-config-prettier", "virtual:a66fcf2aee26ca1e5acae74e1e4996a2e9e0f7051ef1be5ec5c8fe984acf557c713e8706ce3ff59000b39693987d4d2d216be1b154ada08d9097c053e51e2164#npm:8.3.0"],
@@ -85,6 +87,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ow", "npm:0.27.0"],
             ["ts-mixer", "npm:6.0.0"],
             ["tslib", "npm:2.3.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:0.9.0", {
+          "packageLocation": "./.yarn/cache/@discordjs-builders-npm-0.9.0-e9f76741c8-75278bd4cb.zip/node_modules/@discordjs/builders/",
+          "packageDependencies": [
+            ["@discordjs/builders", "npm:0.9.0"],
+            ["@sindresorhus/is", "npm:4.2.0"],
+            ["discord-api-types", "npm:0.24.0"],
+            ["ts-mixer", "npm:6.0.0"],
+            ["tslib", "npm:2.3.1"],
+            ["zod", "npm:3.11.6"]
           ],
           "linkType": "HARD",
         }]
@@ -773,6 +787,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["bot", "workspace:."],
+            ["@discordjs/builders", "npm:0.9.0"],
             ["@discordjs/rest", "npm:0.1.0-canary.0"],
             ["@types/node", "npm:16.11.12"],
             ["@typescript-eslint/eslint-plugin", "virtual:a66fcf2aee26ca1e5acae74e1e4996a2e9e0f7051ef1be5ec5c8fe984acf557c713e8706ce3ff59000b39693987d4d2d216be1b154ada08d9097c053e51e2164#npm:5.6.0"],
@@ -780,6 +795,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bufferutil", "npm:4.0.5"],
             ["discord-api-types", "npm:0.25.2"],
             ["discord.js", "npm:13.3.1"],
+            ["dotenv", "npm:10.0.0"],
             ["erlpack", "npm:0.1.3"],
             ["eslint", "npm:8.4.1"],
             ["eslint-config-prettier", "virtual:a66fcf2aee26ca1e5acae74e1e4996a2e9e0f7051ef1be5ec5c8fe984acf557c713e8706ce3ff59000b39693987d4d2d216be1b154ada08d9097c053e51e2164#npm:8.3.0"],
@@ -1129,6 +1145,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["dot-prop", "npm:6.0.1"],
             ["is-obj", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["dotenv", [
+        ["npm:10.0.0", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-10.0.0-36b272df25-f412c5fe8c.zip/node_modules/dotenv/",
+          "packageDependencies": [
+            ["dotenv", "npm:10.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -3249,6 +3274,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["zlib-sync", "npm:0.1.7"],
             ["nan", "npm:2.15.0"],
             ["node-gyp", "npm:8.4.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["zod", [
+        ["npm:3.11.6", {
+          "packageLocation": "./.yarn/cache/zod-npm-3.11.6-81ff8714d2-044ac41645.zip/node_modules/zod/",
+          "packageDependencies": [
+            ["zod", "npm:3.11.6"]
           ],
           "linkType": "HARD",
         }]

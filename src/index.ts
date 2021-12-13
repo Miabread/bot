@@ -32,13 +32,13 @@ client.on('interactionCreate', async (interaction) => {
     const command = commands.get(interaction.commandName);
     if (!command) return;
 
-    console.log(`Start ${command.options.name}`);
+    console.log(`Start command ${command.options.name}`);
 
     try {
         await command.execute(interaction);
-        console.log(`End ${command.options.name}`);
+        console.log(`End command ${command.options.name}`);
     } catch (error) {
-        console.log(`Error ${command.options.name}`);
+        console.log(`Error command ${command.options.name}`);
         console.error(error);
 
         await interaction.followUp({
@@ -48,11 +48,22 @@ client.on('interactionCreate', async (interaction) => {
     }
 });
 
-// client.on('interactionCreate', async (interaction) => {
-//     if (!interaction.isAutocomplete()) return;
-//     console.log(`Autocomplete interaction`);
+client.on('interactionCreate', async (interaction) => {
+    if (!interaction.isAutocomplete()) return;
+    console.log(`Autocomplete interaction`);
 
-//     interaction.respond()
-// });
+    const command = commands.get(interaction.commandName);
+    if (!command) return;
+
+    console.log(`Start autocomplete ${command.options.name}`);
+
+    try {
+        await command.autocomplete(interaction);
+        console.log(`End autocomplete ${command.options.name}`);
+    } catch (error) {
+        console.log(`Error autocomplete ${command.options.name}`);
+        console.error(error);
+    }
+});
 
 client.login(config.token);

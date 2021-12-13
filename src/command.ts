@@ -1,10 +1,18 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Collection, CommandInteraction } from 'discord.js';
+import {
+    AutocompleteInteraction,
+    Collection,
+    CommandInteraction,
+} from 'discord.js';
 
 export abstract class Command {
     options = new SlashCommandBuilder();
 
     abstract execute(interaction: CommandInteraction): Promise<unknown>;
+
+    async autocomplete(interaction: AutocompleteInteraction): Promise<unknown> {
+        return;
+    }
 }
 
 import { Ping } from './commands/ping';

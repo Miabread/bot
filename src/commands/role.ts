@@ -1,4 +1,5 @@
 import {
+    AutocompleteInteraction,
     CommandInteraction,
     MessageActionRow,
     MessageSelectMenu,
@@ -18,8 +19,18 @@ export class Role extends Command {
                 option
                     .setName('group')
                     .setDescription('The command group to select from')
-                    .setRequired(true),
+                    .setRequired(true)
+                    .setAutocomplete(true),
             );
+    }
+
+    async autocomplete(interaction: AutocompleteInteraction) {
+        interaction.respond(
+            Array.from(roleGroups.keys()).map((group) => ({
+                name: group,
+                value: group,
+            })),
+        );
     }
 
     async execute(interaction: CommandInteraction) {

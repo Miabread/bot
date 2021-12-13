@@ -1,7 +1,7 @@
 import 'dotenv/config';
-import { SlashCommandBuilder } from '@discordjs/builders';
 import { REST } from '@discordjs/rest';
-import { Routes } from 'discord-api-types';
+import { Routes } from 'discord-api-types/v9';
+import { commands } from './commands';
 
 const config = {
     token: process.env.DISCORD_TOKEN ?? '',
@@ -9,18 +9,12 @@ const config = {
     devGuildId: '659466154414440451',
 };
 
-console.log('wew');
-
-const commands = [
-    new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Replies with pong'),
-].map((it) => it.toJSON());
+const body = Array.from(commands.map((command) => command.options.toJSON()));
 
 new REST({ version: '9' })
     .setToken(config.token)
     .put(Routes.applicationGuildCommands(config.clientId, config.devGuildId), {
-        body: commands,
+        body,
     })
     .then(() => console.log('Deployed commands successfully!'))
     .catch(console.error);

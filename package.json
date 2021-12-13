@@ -7,7 +7,7 @@
     "main": "src/index.ts",
     "packageManager": "yarn@3.1.1",
     "scripts": {
-        "dev": "ts-node-dev --respawn --files .",
+        "dev": "ts-node --files .",
         "deploy": "ts-node --files src/deploy.ts",
         "lint": "eslint . --ext .js,.ts"
     },

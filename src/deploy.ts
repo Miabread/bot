@@ -5,10 +5,12 @@ import { config } from '../config';
 
 const body = Array.from(commands.map((command) => command.options.toJSON()));
 
-new REST({ version: '9' })
-    .setToken(config.token)
-    .put(Routes.applicationGuildCommands(config.clientId, config.guildId), {
-        body,
-    })
-    .then(() => console.log('Deployed commands successfully!'))
-    .catch(console.error);
+if (require.main == module) {
+    new REST({ version: '9' })
+        .setToken(config.token)
+        .put(Routes.applicationGuildCommands(config.clientId, config.guildId), {
+            body,
+        })
+        .then(() => console.log('Deployed commands successfully!'))
+        .catch(console.error);
+}

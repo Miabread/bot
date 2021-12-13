@@ -66,4 +66,4 @@ client.on('interactionCreate', async (interaction) => {
     }
 });
 
-client.login(config.token);
+if (require.main == module) client.login(config.token);

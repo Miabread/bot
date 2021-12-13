@@ -16,8 +16,8 @@
     "typescript.enablePromptUseWorkspaceTsdk": true,
     "eslint.nodePath": ".yarn/sdks",
     "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
-    "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

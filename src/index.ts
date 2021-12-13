@@ -23,7 +23,8 @@ client.on('interactionCreate', async (interaction) => {
     } catch (error) {
         console.log(`Error ${command.options.name}`);
         console.error(error);
-        await interaction.reply({
+
+        await interaction.followUp({
             content: 'Error while executing command',
             ephemeral: true,
         });

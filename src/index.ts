@@ -1,11 +1,28 @@
-import { Client, Intents } from 'discord.js';
+import { Client, Collection, Intents, Role } from 'discord.js';
 import { config } from '../config';
 import { commands } from './command';
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.on('ready', (_client) => {
-    console.log('Ready!');
+export const roleGroups = new Collection<string, Role[]>();
+
+client.on('ready', async (_client) => {
+    console.log('Client ready');
+
+    const guild = client.guilds.cache.get(config.guildId);
+    if (!guild) throw new Error('Guild not found');
+
+    for (const [name, ids] of Object.entries(config.roleGroups)) {
+        const roles = ids.map((id) => {
+            const role = guild.roles.cache.get(id);
+            if (!role) throw new Error('Role not found');
+            return role;
+        });
+
+        roleGroups.set(name, roles);
+    }
+
+    console.log(`Setup ${Object.keys(config.roleGroups).length} role groups`);
 });
 
 client.on('interactionCreate', async (interaction) => {

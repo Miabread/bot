@@ -7,7 +7,7 @@ const body = Array.from(commands.map((command) => command.options.toJSON()));
 
 new REST({ version: '9' })
     .setToken(config.token)
-    .put(Routes.applicationGuildCommands(config.clientId, config.devGuildId), {
+    .put(Routes.applicationGuildCommands(config.clientId, config.guildId), {
         body,
     })
     .then(() => console.log('Deployed commands successfully!'))

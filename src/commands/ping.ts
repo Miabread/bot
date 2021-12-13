@@ -1,9 +1,14 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
+import { CommandInteraction } from 'discord.js';
 import { Command } from '../command';
 
-export const ping: Command = {
-    options: new SlashCommandBuilder().setName('ping').setDescription('pong'),
-    async execute(interaction) {
+export class Ping extends Command {
+    constructor() {
+        super();
+
+        this.options.setName('ping').setDescription('pong');
+    }
+
+    async execute(interaction: CommandInteraction) {
         await interaction.reply('Pong!');
-    },
-};
+    }
+}

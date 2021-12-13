@@ -26,8 +26,8 @@ client.on('ready', async (_client) => {
 });
 
 client.on('interactionCreate', async (interaction) => {
-    console.log(`Interaction`);
     if (!interaction.isCommand()) return;
+    console.log(`Command interaction`);
 
     const command = commands.get(interaction.commandName);
     if (!command) return;
@@ -47,5 +47,12 @@ client.on('interactionCreate', async (interaction) => {
         });
     }
 });
+
+// client.on('interactionCreate', async (interaction) => {
+//     if (!interaction.isAutocomplete()) return;
+//     console.log(`Autocomplete interaction`);
+
+//     interaction.respond()
+// });
 
 client.login(config.token);

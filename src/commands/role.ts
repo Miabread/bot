@@ -1,21 +1,28 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { GuildMember, MessageActionRow, MessageSelectMenu } from 'discord.js';
+import {
+    CommandInteraction,
+    MessageActionRow,
+    MessageSelectMenu,
+} from 'discord.js';
 import { MessageComponentTypes } from 'discord.js/typings/enums';
 import { roleGroups } from '..';
 import { Command } from '../command';
 
-export const role: Command = {
-    options: new SlashCommandBuilder()
-        .setName('role')
-        .setDescription('Select a role from a role group')
-        .addStringOption((option) =>
-            option
-                .setName('group')
-                .setDescription('The command group to select from')
-                .setRequired(true),
-        ),
+export class Role extends Command {
+    constructor() {
+        super();
 
-    async execute(interaction) {
+        this.options
+            .setName('role')
+            .setDescription('Select a role from a role group')
+            .addStringOption((option) =>
+                option
+                    .setName('group')
+                    .setDescription('The command group to select from')
+                    .setRequired(true),
+            );
+    }
+
+    async execute(interaction: CommandInteraction) {
         const groupName = interaction.options.getString('group', true);
         const group = roleGroups.get(groupName);
 
@@ -82,5 +89,5 @@ export const role: Command = {
             content: 'Your roles were updated',
             components: [],
         });
-    },
-};
+    }
+}

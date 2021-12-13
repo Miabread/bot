@@ -1,3 +1,5 @@
+config.ts
+
 # Yarn with zero installs
 .yarn/*
 !.yarn/cache

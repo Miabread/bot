@@ -43,7 +43,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bufferutil", "npm:4.0.5"],
             ["discord-api-types", "npm:0.25.2"],
             ["discord.js", "npm:13.3.1"],
-            ["dotenv", "npm:10.0.0"],
             ["erlpack", "npm:0.1.3"],
             ["eslint", "npm:8.4.1"],
             ["eslint-config-prettier", "virtual:a66fcf2aee26ca1e5acae74e1e4996a2e9e0f7051ef1be5ec5c8fe984acf557c713e8706ce3ff59000b39693987d4d2d216be1b154ada08d9097c053e51e2164#npm:8.3.0"],
@@ -795,7 +794,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bufferutil", "npm:4.0.5"],
             ["discord-api-types", "npm:0.25.2"],
             ["discord.js", "npm:13.3.1"],
-            ["dotenv", "npm:10.0.0"],
             ["erlpack", "npm:0.1.3"],
             ["eslint", "npm:8.4.1"],
             ["eslint-config-prettier", "virtual:a66fcf2aee26ca1e5acae74e1e4996a2e9e0f7051ef1be5ec5c8fe984acf557c713e8706ce3ff59000b39693987d4d2d216be1b154ada08d9097c053e51e2164#npm:8.3.0"],
@@ -1145,15 +1143,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["dot-prop", "npm:6.0.1"],
             ["is-obj", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["dotenv", [
-        ["npm:10.0.0", {
-          "packageLocation": "./.yarn/cache/dotenv-npm-10.0.0-36b272df25-f412c5fe8c.zip/node_modules/dotenv/",
-          "packageDependencies": [
-            ["dotenv", "npm:10.0.0"]
           ],
           "linkType": "HARD",
         }]

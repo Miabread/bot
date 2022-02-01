@@ -16,9 +16,9 @@ export abstract class Command {
 }
 
 import { Ping } from './commands/ping';
-import { Role } from './commands/role';
+import { Spin } from './commands/spin';
 
-const commandArray = [new Ping(), new Role()];
+const commandArray = [new Ping(), new Spin()];
 
 export const commands = new Collection(
     commandArray.map((command) => [command.options.name, command]),

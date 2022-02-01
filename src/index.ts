@@ -2,14 +2,16 @@ import { Client, Collection, Intents, Role } from 'discord.js';
 import { config } from '../config';
 import { commands } from './command';
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES],
+});
 
 export const roleGroups = new Collection<string, Role[]>();
 
 client.on('ready', async (_client) => {
     console.log('Client ready');
 
-    const guild = client.guilds.cache.get(config.guildId);
+    const guild = client.guilds.cache.get(config.guildIds[0]);
     if (!guild) throw new Error('Guild not found');
 
     for (const [name, ids] of Object.entries(config.roleGroups)) {

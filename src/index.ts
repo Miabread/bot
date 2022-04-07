@@ -3,7 +3,11 @@ import { config } from '../config';
 import { commands } from './command';
 
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES],
+    intents: [
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_VOICE_STATES,
+        Intents.FLAGS.GUILD_MEMBERS,
+    ],
 });
 
 export const roleGroups = new Collection<string, Role[]>();

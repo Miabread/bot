@@ -22,6 +22,7 @@ import { Spin } from './commands/spin';
 import { Fuck } from './commands/fuck';
 import { Ship } from './commands/ship';
 import { Plinko } from './commands/plinko';
+import { Someone } from './commands/someone';
 
 const commandArray = [
     new Ping(),
@@ -29,6 +30,7 @@ const commandArray = [
     new Fuck(),
     new Ship(),
     new Plinko(),
+    new Someone(),
 ];
 
 export const commands = new Collection(

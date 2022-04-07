@@ -43,7 +43,7 @@ export class Ship extends Command {
         const emoji = this.emojis[Math.floor(num * 5)];
 
         await interaction.reply(
-            `${emoji} ${top} and ${bottom} have a ship rating of ${rating}%`,
+            `${emoji} top ${top} and bottom ${bottom} have a ship rating of ${rating}%`,
         );
     }
 }

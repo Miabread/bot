@@ -23,6 +23,11 @@ export class Plinko extends Command {
             )
             .addStringOption((option) =>
                 option.setName('disk').setDescription('What to plinko'),
+            )
+            .addStringOption((option) =>
+                option
+                    .setName('plinko')
+                    .setDescription('What to do the plinking'),
             );
     }
 
@@ -34,10 +39,13 @@ export class Plinko extends Command {
 
         const width = interaction.options.getNumber('width', true);
         const height = interaction.options.getNumber('height', true);
+
         const disk = interaction.options.getString('disk') ?? this.horse;
+        const plinko = interaction.options.getString('plinko') ?? this.plinko;
+
         const space = ' '.repeat(disk.length);
 
-        let position = this.getRandomInt(0, width);
+        let position = Math.floor(width / 2);
         let output = '';
 
         for (let y = 0; y < height; y++) {
@@ -47,7 +55,7 @@ export class Plinko extends Command {
                 } else {
                     output += space;
                 }
-                output += this.plinko;
+                output += plinko;
             }
 
             if (position == width) {
@@ -63,9 +71,9 @@ export class Plinko extends Command {
             }
 
             if (position > width) {
-                position = width;
+                position -= 3;
             } else if (position < 0) {
-                position = 0;
+                position += 3;
             }
         }
 
@@ -75,10 +83,6 @@ export class Plinko extends Command {
         }
 
         await interaction.editReply(codeBlock(output));
-    }
-
-    getRandomInt(min: number, max: number) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     getRandomBool() {

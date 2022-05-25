@@ -15,7 +15,7 @@ export class Someone extends Command {
     }
 
     async execute(interaction: CommandInteraction) {
-        const role = interaction.options.getRole('role');
+        const role = interaction.options.getRole('role', true);
 
         if (!interaction.guild) {
             await interaction.reply('Not in a guild');
@@ -25,15 +25,13 @@ export class Someone extends Command {
         await interaction.guild.members.fetch();
 
         const victim = interaction.guild.members.cache
-            .filter((member) => !member.user.bot)
-            .filter((member) => {
-                if (!role) return true;
-                return member.roles.cache.has(role.id);
-            })
+            .filter(
+                (member) => !member.user.bot && member.roles.cache.has(role.id),
+            )
             .random();
 
         if (!victim) {
-            await interaction.reply('No guild members???');
+            await interaction.reply('But nobody came.');
             return;
         }
 
